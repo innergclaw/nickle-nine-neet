@@ -1,0 +1,61 @@
+{
+  "id": "nickle-nine-neet-debut-ep",
+  "artist": "NICKLE NINE NEET",
+  "title": "NICKLE NINE NEET",
+  "releaseType": "Debut EP",
+  "currency": "usd",
+  "status": "previews-live",
+  "checkoutStatus": "awaiting-secure-commerce-connection",
+  "preview": {
+    "durationSeconds": 30,
+    "startSeconds": 30,
+    "fadeInSeconds": 1.25,
+    "fadeOutSeconds": 1.25
+  },
+  "products": {
+    "singleTrackPriceCents": 299,
+    "fullEpPriceCents": 1499
+  },
+  "tracks": [
+    {
+      "number": 1,
+      "title": "I MAY BE LIGHT SKIN",
+      "sourceStatus": "received-video-source",
+      "previewStatus": "live",
+      "previewFile": "assets/ep/previews/01-i-may-be-light-skin-preview.mp3",
+      "deliveryStatus": "awaiting-audio-master"
+    },
+    {
+      "number": 2,
+      "title": "I WISH A BITCH WOULD",
+      "sourceStatus": "received-video-source",
+      "previewStatus": "live",
+      "previewFile": "assets/ep/previews/02-i-wish-a-bitch-would-preview.mp3",
+      "deliveryStatus": "awaiting-audio-master"
+    },
+    {
+      "number": 3,
+      "title": "COMFORTABILITY",
+      "sourceStatus": "received-video-source",
+      "previewStatus": "live",
+      "previewFile": "assets/ep/previews/03-comfortability-preview.mp3",
+      "deliveryStatus": "awaiting-audio-master"
+    },
+    {
+      "number": 4,
+      "title": "ON THE WIRE",
+      "sourceStatus": "received-video-source",
+      "previewStatus": "live",
+      "previewFile": "assets/ep/previews/04-on-the-wire-preview.mp3",
+      "deliveryStatus": "awaiting-audio-master"
+    },
+    {
+      "number": 5,
+      "title": "RUN EM OFF THE CORNER",
+      "sourceStatus": "received-video-source",
+      "previewStatus": "live",
+      "previewFile": "assets/ep/previews/05-run-em-off-the-corner-preview.mp3",
+      "deliveryStatus": "awaiting-audio-master"
+    }
+  ]
+}

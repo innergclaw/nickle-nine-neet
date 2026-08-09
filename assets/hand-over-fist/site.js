@@ -62,3 +62,63 @@ window.addEventListener('scroll', () => {
   if (!frame) frame = requestAnimationFrame(renderProgress);
 }, { passive: true });
 renderProgress();
+
+const previewPlayer = document.querySelector('[data-preview-player]');
+
+if (previewPlayer) {
+  const previewAudio = new Audio();
+  const previewButtons = [...previewPlayer.querySelectorAll('[data-preview]')];
+  let activeButton = null;
+
+  const resetButton = (button) => {
+    if (!button) return;
+    button.classList.remove('is-playing');
+    button.querySelector('[data-play-label]').textContent = 'Play';
+    button.querySelector('.track-play-icon').textContent = '▶';
+    button.setAttribute('aria-label', `Play ${button.dataset.title} preview`);
+    button.closest('[data-track]').querySelector('[data-progress]').style.transform = 'scaleX(0)';
+  };
+
+  const setPlayingButton = (button) => {
+    button.classList.add('is-playing');
+    button.querySelector('[data-play-label]').textContent = 'Pause';
+    button.querySelector('.track-play-icon').textContent = 'Ⅱ';
+    button.setAttribute('aria-label', `Pause ${button.dataset.title} preview`);
+  };
+
+  previewButtons.forEach((button) => {
+    button.addEventListener('click', async () => {
+      if (activeButton === button) {
+        previewAudio.pause();
+        resetButton(button);
+        activeButton = null;
+        return;
+      }
+
+      resetButton(activeButton);
+      previewAudio.pause();
+      previewAudio.src = button.dataset.preview;
+      previewAudio.currentTime = 0;
+
+      try {
+        await previewAudio.play();
+        activeButton = button;
+        setPlayingButton(button);
+      } catch {
+        resetButton(button);
+        activeButton = null;
+      }
+    });
+  });
+
+  previewAudio.addEventListener('timeupdate', () => {
+    if (!activeButton || !previewAudio.duration) return;
+    const progress = Math.min(previewAudio.currentTime / previewAudio.duration, 1);
+    activeButton.closest('[data-track]').querySelector('[data-progress]').style.transform = `scaleX(${progress})`;
+  });
+
+  previewAudio.addEventListener('ended', () => {
+    resetButton(activeButton);
+    activeButton = null;
+  });
+}
