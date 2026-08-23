@@ -721,6 +721,60 @@ h3 { margin: 0; font-size: 1.2rem; letter-spacing: -0.035em; line-height: 1.18; 
 .commerce-button { grid-column: 1 / -1; width: 100%; border: 0; font: inherit; cursor: not-allowed; opacity: 0.64; }
 .commerce-note { grid-column: 1 / -1; margin: 2px 0 0; color: var(--muted); font-size: 0.72rem; line-height: 1.5; }
 
+/* NICKLE NINE NEET debut EP: light retail treatment */
+.release-page {
+  color: var(--black);
+  background:
+    radial-gradient(circle at 90% 6%, oklch(0.91 0.005 255 / 0.48), transparent 28rem),
+    linear-gradient(180deg, var(--paper), oklch(0.93 0.006 255));
+}
+.release-page .site-header { background: linear-gradient(to bottom, oklch(0.08 0 0 / 0.97), oklch(0.08 0 0 / 0.84)); }
+.release-page .label-name { color: var(--white); }
+.release-page .ep-hero { min-height: 720px; }
+.release-page .eyebrow { color: var(--graphite); }
+.release-page .ep-kicker, .release-page .ep-lede { color: var(--ink-muted); }
+.release-page .ep-title { color: var(--black); }
+.release-page .ep-title span { color: var(--graphite); }
+.release-page .ep-price-row span { color: var(--ink-muted); background: oklch(0 0 0 / 0.04); box-shadow: 0 0 0 1px oklch(0 0 0 / 0.11); }
+.release-page .ep-price-row strong { color: var(--black); }
+.release-page .button.secondary { color: var(--black); background: oklch(0 0 0 / 0.045); box-shadow: 0 0 0 1px oklch(0 0 0 / 0.13); }
+.release-page .ep-cover { background: var(--black); box-shadow: 0 0 0 1px oklch(0 0 0 / 0.12), 0 32px 76px oklch(0 0 0 / 0.22); }
+.release-page .ep-cover img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: 68% center; filter: grayscale(1) contrast(1.08); }
+.release-page .ep-cover-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, oklch(0 0 0 / 0.22), oklch(0 0 0 / 0.04) 36%, oklch(0 0 0 / 0.78)); }
+.release-page .ep-cover::before, .release-page .ep-cover::after { z-index: 1; pointer-events: none; }
+.release-page .ep-cover::before { border-color: oklch(1 0 0 / 0.24); box-shadow: 0 0 0 22px oklch(1 0 0 / 0.035), 0 0 0 46px oklch(1 0 0 / 0.025); }
+.release-page .ep-cover-index, .release-page .ep-cover-label { z-index: 2; }
+.release-page .ep-cover-title, .release-page .ep-cover-subtitle, .release-page .ep-cover-mark { position: relative; z-index: 2; }
+.release-page .ep-cover-index, .release-page .ep-cover-label, .release-page .ep-cover-subtitle { color: oklch(0.92 0.006 255); }
+.release-page .ep-cover-mark { color: transparent; -webkit-text-stroke-color: oklch(1 0 0 / 0.84); }
+.release-page .ep-cover-title { color: var(--white); }
+.release-page .section { background: transparent; }
+.release-page .section-head .section-copy { color: var(--ink-muted); }
+.release-page .track-list { color: var(--black); background: var(--white); box-shadow: 0 0 0 1px oklch(0 0 0 / 0.1), 0 28px 70px oklch(0 0 0 / 0.12); }
+.release-page .track-card { box-shadow: inset 0 -1px oklch(0 0 0 / 0.1); }
+.release-page .track-card:last-child { box-shadow: none; }
+.release-page .track-number { color: var(--graphite); }
+.release-page .track-copy p { color: var(--ink-muted); }
+.release-page .track-progress { background: oklch(0 0 0 / 0.12); }
+.release-page .track-progress span { background: var(--black); }
+.release-page .track-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 9px; }
+.release-page .track-progress { grid-column: 1 / -1; }
+.release-page .track-play { width: auto; color: var(--black); background: oklch(0 0 0 / 0.045); box-shadow: 0 0 0 1px oklch(0 0 0 / 0.12); }
+.release-page .track-play-icon { color: var(--white); background: var(--black); }
+.release-page .track-play.is-playing { color: var(--white); background: var(--black); box-shadow: 0 0 0 1px var(--black), 0 11px 24px oklch(0 0 0 / 0.18); }
+.release-page .track-play.is-playing .track-play-icon { color: var(--black); background: var(--white); }
+.track-buy { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 8px; padding-inline: 13px; color: var(--white); background: var(--black); border: 0; box-shadow: 0 0 0 1px var(--black); font: inherit; font-size: 0.63rem; font-weight: 820; letter-spacing: 0.075em; text-transform: uppercase; opacity: 0.58; cursor: not-allowed; }
+.track-buy strong { font-size: 0.72rem; font-variant-numeric: tabular-nums; }
+.release-page .ep-purchase { padding-block: 110px 136px; }
+.release-page .ep-purchase > div > p:not(.eyebrow), .release-page .commerce-note { color: var(--ink-muted); }
+.release-page .ep-price-tag { background: var(--white); box-shadow: 0 0 0 1px oklch(0 0 0 / 0.11), 0 16px 38px oklch(0 0 0 / 0.08); }
+.release-page .ep-price-tag strong { color: var(--black); }
+.release-page .ep-price-tag small { color: var(--ink-muted); }
+.release-page .ep-price-tag.featured { background: var(--black); box-shadow: 0 18px 46px oklch(0 0 0 / 0.2); }
+.release-page .ep-price-tag.featured strong, .release-page .ep-price-tag.featured small { color: var(--white); }
+.release-page .commerce-button { color: var(--white); background: var(--black); box-shadow: none; }
+.release-page footer { color: var(--muted); background: var(--black); box-shadow: none; }
+
 .final-cta { padding-block: 138px; text-align: center; }
 .final-crown { display: block; width: clamp(110px, 13vw, 156px); height: auto; margin: 0 auto 18px; filter: drop-shadow(0 16px 24px oklch(0 0 0 / 0.42)); }
 .final-cta h2 { max-width: 12ch; margin: 18px auto 24px; }
@@ -750,6 +804,8 @@ footer { padding-block: 30px 44px; color: var(--muted); box-shadow: inset 0 1px 
   .vinyl-link:hover .youtube-cue { color: var(--black); background: var(--chrome); }
   .track-play:hover { color: var(--black); background: var(--chrome); box-shadow: 0 0 0 1px oklch(1 0 0 / 0.16), 0 11px 24px oklch(0.91 0.005 255 / 0.1); }
   .track-play:hover .track-play-icon { color: var(--chrome); background: var(--black); }
+  .release-page .track-play:hover { color: var(--white); background: var(--black); box-shadow: 0 0 0 1px var(--black), 0 11px 24px oklch(0 0 0 / 0.18); }
+  .release-page .track-play:hover .track-play-icon { color: var(--black); background: var(--white); }
 }
 @media (max-width: 980px) {
   .nav { grid-template-columns: 1fr auto; }
@@ -813,6 +869,8 @@ footer { padding-block: 30px 44px; color: var(--muted); box-shadow: inset 0 1px 
   .ep-cover-label { inset: auto 21px 20px auto; }
   .track-card { grid-template-columns: 46px minmax(0, 1fr); gap: 8px 14px; min-height: 0; padding: 22px; }
   .track-controls { grid-column: 1 / -1; margin-block-start: 10px; }
+  .release-page .track-controls { grid-template-columns: 1fr; row-gap: 9px; }
+  .release-page .track-play, .track-buy { width: 100%; }
   .ep-purchase { gap: 38px; padding-block: 82px 94px; }
   .ep-purchase-actions { grid-template-columns: 1fr; }
 }
