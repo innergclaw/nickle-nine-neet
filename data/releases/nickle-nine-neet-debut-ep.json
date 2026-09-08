@@ -6,12 +6,6 @@
   "currency": "usd",
   "status": "previews-live",
   "checkoutStatus": "awaiting-secure-commerce-connection",
-  "preview": {
-    "durationSeconds": 30,
-    "startSeconds": 30,
-    "fadeInSeconds": 1.25,
-    "fadeOutSeconds": 1.25
-  },
   "products": {
     "singleTrackPriceCents": 299,
     "fullEpPriceCents": 1499
@@ -23,39 +17,75 @@
       "sourceStatus": "received-video-source",
       "previewStatus": "live",
       "previewFile": "assets/ep/previews/01-i-may-be-light-skin-preview.mp3",
-      "deliveryStatus": "awaiting-audio-master"
+      "deliveryStatus": "awaiting-audio-master",
+      "preview": {
+        "startSeconds": 30,
+        "durationSeconds": 30,
+        "fadeInSeconds": 1.25,
+        "fadeOutSeconds": 1.25
+      },
+      "previewUpdateStatus": "awaiting-full-source-file"
     },
     {
       "number": 2,
       "title": "I WISH A BITCH WOULD",
       "sourceStatus": "received-video-source",
       "previewStatus": "live",
-      "previewFile": "assets/ep/previews/02-i-wish-a-bitch-would-preview.mp3",
-      "deliveryStatus": "awaiting-audio-master"
+      "previewFile": "assets/ep/previews/02-i-wish-a-bitch-would-preview-v2.mp3",
+      "deliveryStatus": "awaiting-audio-master",
+      "preview": {
+        "startSeconds": 59.5,
+        "durationSeconds": 37,
+        "fadeInSeconds": 0.1,
+        "fadeOutSeconds": 2
+      }
     },
     {
       "number": 3,
       "title": "COMFORTABILITY",
       "sourceStatus": "received-video-source",
       "previewStatus": "live",
-      "previewFile": "assets/ep/previews/03-comfortability-preview.mp3",
-      "deliveryStatus": "awaiting-audio-master"
+      "previewFile": "assets/ep/previews/03-comfortability-preview-v2.mp3",
+      "deliveryStatus": "awaiting-audio-master",
+      "preview": {
+        "startSeconds": 59.5,
+        "durationSeconds": 75,
+        "fadeInSeconds": 0.1,
+        "fadeOutSeconds": 2
+      }
     },
     {
       "number": 4,
       "title": "ON THE WIRE",
       "sourceStatus": "received-video-source",
       "previewStatus": "live",
-      "previewFile": "assets/ep/previews/04-on-the-wire-preview.mp3",
-      "deliveryStatus": "awaiting-audio-master"
+      "previewFile": "assets/ep/previews/04-on-the-wire-preview-v2.mp3",
+      "deliveryStatus": "awaiting-audio-master",
+      "preview": {
+        "startSeconds": 43.5,
+        "durationSeconds": 61.5,
+        "fadeInSeconds": 0.1,
+        "fadeOutSeconds": 2
+      }
     },
     {
       "number": 5,
       "title": "RUN EM OFF THE CORNER",
       "sourceStatus": "received-video-source",
       "previewStatus": "live",
-      "previewFile": "assets/ep/previews/05-run-em-off-the-corner-preview.mp3",
-      "deliveryStatus": "awaiting-audio-master"
+      "previewFile": "assets/ep/previews/05-run-em-off-the-corner-preview-v2.mp3",
+      "deliveryStatus": "awaiting-audio-master",
+      "preview": {
+        "startSeconds": 63.8,
+        "durationSeconds": 40.5,
+        "fadeInSeconds": 0.1,
+        "fadeOutSeconds": 2
+      }
     }
-  ]
+  ],
+  "previewPolicy": {
+    "timing": "per-track",
+    "updated": "2026-09-08",
+    "note": "Track 1 retains its existing preview pending the full source file. Tracks 2 through 5 use the review cuts authorized for publication."
+  }
 }
