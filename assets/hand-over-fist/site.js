@@ -68,7 +68,10 @@ const previewPlayer = document.querySelector('[data-preview-player]');
 if (previewPlayer) {
   const previewAudio = new Audio();
   const previewButtons = [...previewPlayer.querySelectorAll('[data-preview]')];
+  const playerStatus = document.querySelector('[data-player-status]');
+  previewAudio.preload = 'none';
   let activeButton = null;
+  let playRequest = 0;
 
   const resetButton = (button) => {
     if (!button) return;
@@ -76,6 +79,7 @@ if (previewPlayer) {
     button.querySelector('[data-play-label]').textContent = 'Play';
     button.querySelector('.track-play-icon').textContent = '▶';
     button.setAttribute('aria-label', `Play ${button.dataset.title} preview`);
+    button.setAttribute('aria-pressed', 'false');
     button.closest('[data-track]').querySelector('[data-progress]').style.transform = 'scaleX(0)';
   };
 
@@ -84,29 +88,40 @@ if (previewPlayer) {
     button.querySelector('[data-play-label]').textContent = 'Pause';
     button.querySelector('.track-play-icon').textContent = 'Ⅱ';
     button.setAttribute('aria-label', `Pause ${button.dataset.title} preview`);
+    button.setAttribute('aria-pressed', 'true');
   };
 
   previewButtons.forEach((button) => {
     button.addEventListener('click', async () => {
-      if (activeButton === button) {
+      const request = ++playRequest;
+      if (playerStatus) playerStatus.textContent = '';
+      if (activeButton === button && !previewAudio.paused) {
         previewAudio.pause();
-        resetButton(button);
-        activeButton = null;
+        button.classList.remove('is-playing');
+        button.querySelector('[data-play-label]').textContent = 'Resume';
+        button.querySelector('.track-play-icon').textContent = '▶';
+        button.setAttribute('aria-label', `Resume ${button.dataset.title} preview`);
+        button.setAttribute('aria-pressed', 'false');
         return;
       }
 
-      resetButton(activeButton);
-      previewAudio.pause();
-      previewAudio.src = button.dataset.preview;
-      previewAudio.currentTime = 0;
+      if (activeButton !== button) {
+        resetButton(activeButton);
+        previewAudio.pause();
+        previewAudio.src = button.dataset.preview;
+        activeButton = button;
+      }
+      button.querySelector('[data-play-label]').textContent = 'Loading';
 
       try {
         await previewAudio.play();
-        activeButton = button;
+        if (request !== playRequest) return;
         setPlayingButton(button);
       } catch {
+        if (request !== playRequest) return;
         resetButton(button);
         activeButton = null;
+        if (playerStatus) playerStatus.textContent = 'This preview could not load. Please try again.';
       }
     });
   });
@@ -120,5 +135,12 @@ if (previewPlayer) {
   previewAudio.addEventListener('ended', () => {
     resetButton(activeButton);
     activeButton = null;
+  });
+  previewAudio.addEventListener('error', () => {
+    if (!activeButton) return;
+    ++playRequest;
+    resetButton(activeButton);
+    activeButton = null;
+    if (playerStatus) playerStatus.textContent = 'This preview could not load. Please try again.';
   });
 }

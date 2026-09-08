@@ -1,0 +1,45 @@
+/* Keep the EP purchase flow separate from the artist profile. */
+.release-page { background: #fff; color: #111; }
+.release-page .ep-hero { min-height: 0; padding-block: 32px 24px; grid-template-columns: minmax(0, 1fr) 220px; gap: 32px; }
+.release-page .ep-kicker { margin-top: 12px; }
+.release-page .ep-title { font-size: clamp(2.7rem, 5vw, 4.6rem); line-height: .92; margin-block: 10px 14px; letter-spacing: -.06em; }
+.release-page .ep-lede { margin-bottom: 16px; font-size: .95rem; }
+.release-page .ep-cover { margin: 0; width: 100%; padding: 0; box-shadow: none; outline: 1px solid oklch(0 0 0 / .1); outline-offset: -1px; }
+.release-page .ep-cover img { object-position: 78% center; filter: none; }
+.release-page .ep-cover::before, .release-page .ep-cover::after, .release-page .ep-cover-overlay { display: none; }
+.release-page .hero-actions { gap: 10px; }
+.release-page .hero-actions .commerce-button { grid-column: auto; width: auto; }
+.release-page .commerce-note { margin: 12px 0 0; font-size: .78rem; line-height: 1.5; }
+.release-page .commerce-button:disabled { opacity: .65; }
+.release-page .ep-listing { padding-block: 12px 24px; scroll-margin-top: 105px; }
+.release-page .section-head { display: block; margin-bottom: 16px; }
+.release-page .section-head h2 { margin: 0 0 6px; font-size: 1.6rem; letter-spacing: -.04em; }
+.release-page .section-head .section-copy { margin: 0; font-size: .85rem; }
+.release-page .track-list { box-shadow: 0 0 0 1px oklch(0 0 0 / .12); }
+.release-page .track-card { grid-template-columns: 32px minmax(0, 1fr) minmax(340px, .85fr); min-height: 98px; gap: 16px; padding: 18px 20px; }
+.release-page .track-copy h3 { font-size: 1.02rem; letter-spacing: -.02em; }
+.release-page .track-copy p { font-size: .65rem; }
+.release-page .track-play, .release-page .track-buy { min-height: 48px; letter-spacing: .025em; }
+.release-page .track-play-icon { flex-shrink: 0; }
+.release-page .track-play:focus-visible { outline-color: #111; }
+.release-page .track-buy { opacity: .65; }
+.release-page .player-status { margin: 0; color: #8c2424; font-size: .85rem; }
+.release-page .player-status:not(:empty) { margin-bottom: 12px; }
+.release-page .ep-sales-note { padding-bottom: 30px; color: #555; font-size: .8rem; line-height: 1.6; }
+.release-page .ep-sales-note a { display: inline-block; margin-left: 12px; color: #111; text-decoration: underline; }
+@media (max-width: 760px) {
+  .release-page .ep-hero { grid-template-columns: minmax(0, 1fr) 112px; gap: 14px; padding-block: 24px 16px; align-items: start; }
+  .release-page .ep-title { font-size: clamp(2rem, 6.5vw, 3rem); }
+  .release-page .ep-hero-copy { display: contents; }
+  .release-page .ep-hero-copy > * { grid-column: 1; margin: 0; }
+  .release-page .ep-hero-copy .ep-kicker { margin-top: -6px; }
+  .release-page .ep-cover { grid-column: 2; grid-row: 1 / 4; align-self: center; }
+  .release-page .ep-hero-copy .ep-lede, .release-page .ep-hero-copy .hero-actions, .release-page .ep-hero-copy .commerce-note { grid-column: 1 / -1; }
+  .release-page .hero-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .release-page .hero-actions .button { min-height: 48px; padding-inline: 8px; font-size: .62rem; }
+  .release-page .track-card { grid-template-columns: 24px minmax(0, 1fr); gap: 8px 10px; padding: 16px; }
+  .release-page .track-controls { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: 4px; }
+  .release-page .track-buy { padding-inline: 6px; gap: 5px; font-size: .6rem; }
+  .release-page .track-buy > span { display: none; }
+  .release-page .ep-sales-note a { display: block; margin: 10px 0 0; }
+}
